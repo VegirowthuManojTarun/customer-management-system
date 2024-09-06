@@ -29,7 +29,7 @@ const CustomerList = () => {
 
   const deleteCustomer = async (id) => {
     try {
-      await axios.delete(`/api/${id}`);
+      await axios.delete(`/api/customers/${id}`);
       const response = await axios.get(`/api/customers/?page=${page + 1}`);
       setCustomers(response.data.customers);
       setTotalPages(response.data.totalPages);
