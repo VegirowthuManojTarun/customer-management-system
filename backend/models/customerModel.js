@@ -84,6 +84,7 @@ const updateCustomer = (req, res) => {
 // Delete a customer by ID
 const deleteCustomer = (req, res) => {
   const id = req.params.id;
+  console.log(id);
   db.run("DELETE FROM customers WHERE id = ?", [id], function (err) {
     if (err) {
       res.status(500).json({ error: err.message });
@@ -92,7 +93,6 @@ const deleteCustomer = (req, res) => {
     res.json({ deletedRows: this.changes });
   });
 };
-
 
 const allCustomers = (req, res) => {
   console.log(22);
